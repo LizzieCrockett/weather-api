@@ -1,0 +1,93 @@
+body { 
+margin: 0px auto 50px auto;
+text-align: center;
+text-align: center;
+font-family: Montserrat;
+}
+
+#topbanner {
+  background-image: url('https://openweathermap.org/themes/openweathermap/assets/img/new-history-forecast-bulk.png');
+  background-size: cover;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+h1 {
+  padding-top: 50px;
+  font-size: 64px;
+  font-weight: 300;
+  letter-spacing: 1.1px;
+  text-align: center;
+  color: #27b7c1;
+  margin: auto;
+}
+
+#question {
+  color:  #fadadd;
+  text-shadow: 2px 2px 4px#464e51;
+}
+
+form {
+  margin-top: 50px;
+  height: 100px;
+}
+
+#button, input{
+  height: 46px;
+  border-radius: 4px;
+  background-color: #27b7c1;
+  font-family: Source Sans Pro;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 0.94;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#button {
+width: 140px;
+}
+
+input {
+width: 200px;
+}
+
+#weathercontainer {
+  color: #464e51;
+  background-color: #fadadd;
+  }
+
+  footer {
+    font-style: italic;
+    color: #27b7c1;
+    padding-bottom: 50px;
+  }
+
+@media (max-width: 860px) {
+  #topbanner {
+    background-image: url('https://openweathermap.org/themes/openweathermap/assets/img/new-history-forecast-bulk.png');
+  }
+
+  form {
+    margin-top: 30px;
+    padding-bottom: 10px;
+  }
+
+  .weather {
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    padding: 10px 20px;
+    height: 100%;
+  }
+
+  .sectiontitle, .sectiontitle h2 {
+    margin: auto;
+    text-align: center;
+  }
+}
+
+ 

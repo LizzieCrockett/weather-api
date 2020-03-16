@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Weatherama</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Work+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Welcome to Weatherama.</h1>
+    </header>
+    <main>
+        <div id="topbanner">
+            <h1 id="question">Where do you want to see weather?</h1>
+            <form id="inputform">
+                <input type="text" id="cityinput" placeholder="please enter a city">
+                <button id="button" type="submit">Show me!</button>
+            </form>
+        </div>
+        <div id="weathercontainer">
+            <h3 id="main_weather"></h3>
+            <h3 id="temp_display"></h3>
+            <h3 id="feels_like"></h3>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Thank you for visiting Weatherama. Have a nice day.</h3>
+    </footer>
+
+
+
+    <script src="main.js"></script>
+    <script>
+        const form = document.getElementById("inputform");
+        const cityInput = document.getElementById("cityinput");
+        const mainWeather = document.getElementById("main_weather");
+        const tempDisplay = document.getElementById("temp_display");
+        const feelsLike = document.getElementById("feels_like");
+
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const city = cityInput.value;
+            getWeather(city).then((json => {
+                mainWeather.innerHTML = `Mainly ${(json.weather[0].main.toLowerCase())} in ${json.name} at the moment`;
+                tempDisplay.innerHTML = `The temperature is ${Math.round(json.main.temp - 273.15)} &#176c`;
+                feelsLike.innerHTML = `It feels more like ${Math.round(json.main.feels_like - 273.15)} &#176c`;
+            })).catch((err) => {
+                console.log(err.message);
+                mainWeather.innerHTML = `Invalid placename, please try again`;
+                tempDisplay.innerHTML = ``;
+                feelsLike.innerHTML = ``;
+            })
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
